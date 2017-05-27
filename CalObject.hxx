@@ -75,11 +75,15 @@ private:
   std::complex<float> productMean(std::vector<std::complex<float> > & vec0, 
 				  std::vector<std::complex<float> > & vec1); 
 
+  std::complex<float> calcIQBalance(std::vector<std::complex<float> > & vec);
+
   bool getRXBuffer(std::vector<std::complex<float> > & vec); 
 
   bool sendEnvelope(std::vector<std::complex<float> > & vec);
 
-  bool dumpBuffer(std::string & ofname, std::vector<std::complex<float> > & vec);
+  bool dumpBuffer(const std::string & ofname, std::vector<std::complex<float> > & vec);
+
+  bool save_rx_result, save_tx_result; 
 };
 
 #endif

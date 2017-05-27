@@ -44,7 +44,7 @@ Params::Params(int argc, char * argv[])
     ("freq_step", po::value<double>(&freq_step)->default_value(1e6),
      "Frequency increment between measurements")
 
-    ("tx_offset", po::value<double>(&tx_offset)->default_value(1e3), 
+    ("tx_offset", po::value<double>(&tx_offset)->default_value(10e3), 
      "TX frequency is <tx_offset> above RX frequency")
 
     ("sample_rate", po::value<double>(&sample_rate)->default_value(625000), 
@@ -64,6 +64,10 @@ Params::Params(int argc, char * argv[])
     ("rx_g_pga", po::value<double>(&rx_g_pga)->default_value(0.0), 
      "RX Gain for amplifier at ADC input")
 
+    ("save_rx", po::value<bool>(&save_rx_result)->default_value(false), 
+     "If true, write RX calibration to settings database.")
+    ("save_tx", po::value<bool>(&save_tx_result)->default_value(false), 
+     "If true, write TX calibration to settings database.")
 
     ;
 

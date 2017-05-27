@@ -61,6 +61,9 @@ public:
 
   enum Gain { RX_LNA, RX_TIA, RX_PGA, TX_PAD } ;
 
+  bool saveRX() { return save_rx_result; }
+  bool saveTX() { return save_tx_result; }  
+
   double getGain(Gain sel)  {
     switch (sel) {
     case RX_LNA: return rx_g_lna;
@@ -83,6 +86,8 @@ private:
   double tx_offset; 
 
   double tx_g_pad, rx_g_lna, rx_g_tia, rx_g_pga; 
+
+  bool save_rx_result, save_tx_result; 
 };
 
 #endif
